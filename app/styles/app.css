@@ -1,0 +1,164 @@
+body {
+	margin: 0;
+	background: #eee;
+	color: #333;
+	font-family: 'Yantramanav', sans-serif;
+	line-height: 1em;
+}
+
+#wrap {
+	margin: 70px auto;
+	width: 820px;
+	position: relative;
+}
+
+.editor {
+	float: left;
+	width: 300px;
+	position: absolute;
+}
+
+	.heading, .body-text {
+		position: relative;
+		margin-bottom: 60px;
+	}
+
+	.editor h2 {
+		margin-right: 75px;
+		font: bold 1.2em/0.5em 'Yantramanav';
+		text-align: right;
+	}
+
+	.editor .refresh , .editor .box {
+		display: inline-block;
+		vertical-align: middle;
+		width: 35px;
+		height: 35px;
+		border: 1px solid #333;
+	}
+
+	.editor .refresh {
+		background: url('/assets/images/refresh.png') center center no-repeat;
+		background-size: 20px 20px;
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	.editor .box {
+		margin-left: -5px;
+		width: 190px;
+		height: 85px;
+		position: relative;
+	}
+
+		.editor .box .box-bg {
+			background: #ddd;
+			width: 180px;
+			height: 75px;
+			position: absolute;
+			top: 5px;
+			left: 5px;
+		}
+
+		.box .font-name {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0 20px;
+			width: 140px;
+			height: 48px;
+			text-align: center;
+			background: #e5c126;
+		}
+
+		.body-text .box .font-name {
+			background: #8dd3d3;
+		}
+
+		.box .icon {
+			display: inline-block;
+			bottom: -5px;
+			width: 28px;
+			height: 32px;
+			border-right: 1px solid #333;
+			cursor: pointer;
+			cursor: hand;
+		}
+
+			.box .icon-bold {
+				background: url('/assets/images/bold.png') 7px 6px no-repeat;
+				background-size: auto 13px;
+			}
+
+			.box .icon-italic {
+				background: url('/assets/images/italic.png') 5px 6px no-repeat;
+				background-size: auto 13px;
+			}
+
+			.box .icon-caps {
+				background: url('/assets/images/caps.png') 2px 6px no-repeat;
+				background-size: auto 13px;
+			}
+
+			.box .like, .box .liked {
+				position: absolute;
+				line-height: 26px;
+				padding: 7px 0;
+				width: 84px;
+				height: 24px;
+				border: none;
+				text-align: center;
+				color: #888;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 0.8em;
+				font-weight: 700;
+			}
+
+			.box .liked { 
+				color: #b74a73;
+				visibility: hidden; 
+				cursor: default;
+			}
+
+	.editor .line {
+		position: absolute;
+		top: 70%;
+		left: 36px;
+		height: 0;
+		width: 274px;
+		border-bottom: 1px solid #000;
+	}
+
+		.heading .line {
+			width: 290px;
+		}
+
+.textbox {
+	float: right;
+	width: 420px;
+	padding: 20px 50px 40px 80px;
+	background: #fff;
+}
+
+	.textbox h1 {
+		font: 700 3em/1em 'Utopia';
+	}
+
+	.textbox .paragraphs {
+		position: relative;
+	}
+
+		.textbox .paragraphs .paragraphs-bracket {
+			position: absolute;
+			left: -40px;
+			top: 0;
+			border: 1px solid #333;
+			border-right: none;
+			display: block;
+			width: 15px;
+			height: 100%;
+		}
+
+	.textbox p {
+		font: normal 0.8em/1.5em 'Yantramanav';
+	}

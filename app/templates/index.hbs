@@ -1,0 +1,49 @@
+<div class="editor">
+	<div class="heading">
+		<h2>Heading</h2>
+		<div class="refresh" {{action "refresh" "textbox-h1" "like1" "h1Name" n="mouseUp"}}></div>
+		<div class="box">
+			<div class="box-bg">
+				<div class="font-name" id="h1Name"></div>
+				<div class="icon icon-bold" {{action "bold" "textbox-h1" on="mouseUp"}}></div>
+				<div class="icon icon-italic" {{action "italic" "textbox-h1" on="mouseUp"}}></div>
+				<div class="icon icon-caps" {{action "caps" "textbox-h1" on="mouseUp"}}></div>
+				<div class="icon like" id="like1" {{action "likeFam" "textbox-h1" "like1" on="mouseUp"}}>Like?</div>
+				<div class="icon liked" id="like1done">Liked.</div>
+			</div>
+		</div>
+		<div class="line"></div>
+	</div>
+	<div class="body-text">
+		<h2>Body Text</h2>
+		<div class="refresh" {{action "refresh" "textbox-p" "like2" "pName" on="mouseUp"}}></div>
+		<div class="box">
+			<div class="box-bg">
+				<div class="font-name" id="pName"></div>
+				<div class="icon icon-bold" {{action "bold" "textbox-p" on="mouseUp"}}></div>
+				<div class="icon icon-italic" {{action "italic" "textbox-p" on="mouseUp"}}></div>
+				<div class="icon icon-caps" {{action "caps" "textbox-p" on="mouseUp"}}></div>
+				<div class="icon like" id="like2" {{action "likeFam" "textbox-p" "like2" on="mouseUp"}}>Like?</div>
+				<div class="icon liked" id="like2done">Liked.</div>
+			</div>
+		</div>
+		<div class="line"></div>
+	</div>
+</div>
+<div class="textbox">
+	<h1 id="textbox-h1">Lorem Ipsum</h1>
+	<div class="paragraphs">
+		<div class="paragraphs-bracket"></div>
+		<p id="textbox-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper purus vel nisi condimentum, sit amet euismod metus luctus. Curabitur tellus turpis, volutpat ut congue vitae, tempus non velit. In consectetur rhoncus turpis, sed pulvinar leo vehicula vitae.
+		<br><br>
+		Morbi quis dolor consectetur, accumsan turpis eget, semper mauris. Mauris mattis condimentum arcu, vitae pellentesque massa hendrerit at. Nulla facilisi. Nunc purus mauris, commodo id bibendum in, bibendum eu turpis. In hac habitasse platea dictumst.</p>
+	</div>
+</div>
+
+{{!-- <div>
+	{{#each model as |item|}}
+		{{item.family}}
+	{{/each}}
+</div> --}}
+
+{{outlet}}
