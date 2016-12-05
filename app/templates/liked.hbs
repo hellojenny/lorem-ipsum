@@ -5,7 +5,8 @@
 
 <div id="wrap">
 {{#each model as |data|}}
-	<div class="likedFont">{{data.family}}</div>
+	{{#link-to "liked.code" data.family class="likedFont"}}{{data.family}}{{/link-to}}
+{{!-- 	<div class="likedFont">{{data.family}}</div> --}}
 {{/each}}
 
 {{outlet}}

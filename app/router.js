@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('app');
   this.route('liked', function() {
-    this.route('code');
+    this.route('code', { path: ':family' });
   });
 });
 
