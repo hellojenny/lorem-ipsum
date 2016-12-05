@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
 				});
 
 			});
-		}.on('init'),
+		}.on('init')
 	}
 });
 

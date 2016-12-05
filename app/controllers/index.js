@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
 	actions: {
 		getModel: function() {
 			model = this.get("model");
+			return model;
 		},
 
 		// editor functions
@@ -104,7 +105,7 @@ export default Ember.Controller.extend({
 
 			$.ajax({
 				type: 'post',
-				url: 'http://localhost:3000/fonts/liked',
+				url: 'https://lorem-ipsum-api.herokuapp.com/fonts/liked',
 				data: {
 					family: fam
 				}
@@ -113,6 +114,6 @@ export default Ember.Controller.extend({
 			$("#"+likeButton).css("visibility", "hidden");
 			$("#"+likeButton+"done").css("visibility", "visible");
 			return $("#"+object).css("font-family");
-		},
+		}
 	}
 });
