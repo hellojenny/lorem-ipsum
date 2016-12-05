@@ -17,7 +17,6 @@ export default Ember.Controller.extend({
 
 		// editor functions
 		firstFont: function() {
-
 			// h1
 			$("#textbox-h1").css("font-family",model[Math.floor(Math.random() * model.length)].family);
 			var fam1 = $("#textbox-h1").css("font-family");
@@ -33,7 +32,13 @@ export default Ember.Controller.extend({
 			    fam2 = fam2.substr(1,fam2.length-2);
 			}
 			$("#pName").html('Font: '+fam2);
-		},
+
+			WebFont.load({
+				google: {
+					families: [fam1, fam2]
+				}
+			});
+		}.on('init'),
 		refresh: function(object, likeButton, label) {
 			$("#"+object).each(function(i) {
 				// calls all fonts and picks one at random
@@ -49,6 +54,12 @@ export default Ember.Controller.extend({
 					    fam = fam.substr(1,fam.length-2);
 				}
 				$("#"+label).html('Font: '+fam);
+
+				WebFont.load({
+				google: {
+					families: [fam]
+				}
+			});
 			});
 		},
 		bold: function(object) {
@@ -90,6 +101,15 @@ export default Ember.Controller.extend({
 				    fam = fam.substr(1,fam.length-2);
 			}
 			console.log(fam);
+
+			$.ajax({
+				type: 'post',
+				url: 'http://localhost:3000/fonts/liked',
+				data: {
+					family: fam
+				}
+			});
+
 			$("#"+likeButton).css("visibility", "hidden");
 			$("#"+likeButton+"done").css("visibility", "visible");
 			return $("#"+object).css("font-family");

@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('app');
+  this.route('liked');
 });
 
 export default Router;

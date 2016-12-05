@@ -1,13 +1,32 @@
 body {
 	margin: 0;
-	background: #eee;
+	background: #f7f7f7;
 	color: #333;
 	font-family: 'Yantramanav', sans-serif;
 	line-height: 1em;
 }
 
+nav {
+	height: 20px;
+	background: #eee;
+	padding: 20px;
+	text-align: center;
+}
+
+	a, a:active, a:visited {
+		margin: 0 10px;
+		color: #000;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	a:hover {
+		border-bottom: 1px solid #000;
+	}
+
 #wrap {
-	margin: 70px auto;
+	margin: 60px auto;
 	width: 820px;
 	position: relative;
 }
@@ -160,5 +179,11 @@ body {
 		}
 
 	.textbox p {
-		font: normal 0.8em/1.5em 'Yantramanav';
+		font: normal 1em/1.5em 'Yantramanav';
+	}
+
+	.emporium {
+		display: inline;
+		background: #eee;
+		padding: 2px 4px;
 	}
