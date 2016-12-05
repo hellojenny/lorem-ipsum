@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+	beforeModel: function() {
+		// somehow load the firstFont functions
+		console.log("help (index)");
+	},
 	model: function(params) {
 		return $.ajax({
-			url: 'http://localhost:3000/fonts'
+			url: 'https://lorem-ipsum-api.herokuapp.com/fonts'
 		}).then(function(json) {
 			return json.items;
 		});
