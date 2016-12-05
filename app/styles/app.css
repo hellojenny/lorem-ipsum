@@ -21,7 +21,7 @@ nav {
 		text-decoration: none;
 	}
 
-	a:hover {
+	a:hover, .active {
 		border-bottom: 1px solid #000;
 	}
 
@@ -187,3 +187,11 @@ nav {
 		background: #eee;
 		padding: 2px 4px;
 	}
+
+.likedFont {
+	display: inline-block;
+	margin: 5px;
+	padding: 10px;
+	font-size: 1.5em;
+	border: 1px solid #000;
+}

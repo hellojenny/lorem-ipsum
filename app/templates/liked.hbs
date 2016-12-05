@@ -1,3 +1,12 @@
-Love
+<nav>
+	{{#link-to "index"}}Home{{/link-to}}
+	{{#link-to "liked" class="active"}}Favorites{{/link-to}}
+</nav>
+
+<div id="wrap">
+{{#each model as |data|}}
+	<div class="likedFont">{{data.family}}</div>
+{{/each}}
+</div>
 
 {{outlet}}

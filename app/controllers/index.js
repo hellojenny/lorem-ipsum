@@ -100,7 +100,7 @@ export default Ember.Controller.extend({
 			if (fam.charAt(0) === '"' && fam.charAt(fam.length -1) === '"') {
 				    fam = fam.substr(1,fam.length-2);
 			}
-			console.log(fam);
+			// console.log(fam);
 
 			$.ajax({
 				type: 'post',
