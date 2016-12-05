@@ -19,20 +19,20 @@ export default Ember.Controller.extend({
 		// editor functions
 		firstFont: function() {
 			// h1
-			$("#textbox-h1").css("font-family",model[Math.floor(Math.random() * model.length)].family);
-			var fam1 = $("#textbox-h1").css("font-family");
+			Ember.$("#textbox-h1").css("font-family",model[Math.floor(Math.random() * model.length)].family);
+			var fam1 = Ember.$("#textbox-h1").css("font-family");
 			if (fam1.charAt(0) === '"' && fam1.charAt(fam1.length -1) === '"') {
 			    fam1 = fam1.substr(1,fam1.length-2);
 			}
-			$("#h1Name").html('Font: '+fam1);
+			Ember.$("#h1Name").html('Font: '+fam1);
 
 			// p
-			$("#textbox-p").css("font-family",model[Math.floor(Math.random() * model.length)].family);
-			var fam2 = $("#textbox-p").css("font-family");
+			Ember.$("#textbox-p").css("font-family",model[Math.floor(Math.random() * model.length)].family);
+			var fam2 = Ember.$("#textbox-p").css("font-family");
 			if (fam2.charAt(0) === '"' && fam2.charAt(fam2.length -1) === '"') {
 			    fam2 = fam2.substr(1,fam2.length-2);
 			}
-			$("#pName").html('Font: '+fam2);
+			Ember.$("#pName").html('Font: '+fam2);
 
 			WebFont.load({
 				google: {
@@ -41,20 +41,22 @@ export default Ember.Controller.extend({
 			});
 		}.on('init'),
 		refresh: function(object, likeButton, label) {
-			$("#"+object).each(function(i) {
+			Ember.$("#"+object).each(function() {
 				// calls all fonts and picks one at random
-				$(this).css("font-family",model[Math.floor(Math.random() * model.length)].family);
+				Ember.$(this).css("font-family",model[Math.floor(Math.random() * model.length)].family);
 
 				// resets like button
-				$("#"+likeButton).css("visibility", "visible");
-				$("#"+likeButton+"done").css("visibility", "hidden");
+				Ember.$("#"+likeButton).css("visibility", "visible");
+				Ember.$("#"+likeButton+"done").css("visibility", "hidden");
 
 				//replaces label
-				var fam = $(this).css("font-family");
+				var fam = Ember.$(this).css("font-family");
 				if (fam.charAt(0) === '"' && fam.charAt(fam.length -1) === '"') {
 					    fam = fam.substr(1,fam.length-2);
 				}
-				$("#"+label).html('Font: '+fam);
+				Ember.$("#"+label).html('Font: '+fam);
+
+				// var WebFont = require('webfontloader');
 
 				WebFont.load({
 				google: {
@@ -64,46 +66,46 @@ export default Ember.Controller.extend({
 			});
 		},
 		bold: function(object) {
-			$("#"+object).each(function(i) {
-				var bold = $(this).css("font-weight");
+			Ember.$("#"+object).each(function() {
+				var bold = Ember.$(this).css("font-weight");
 				if (bold === "700" || bold === "bold") {
-					$(this).css("font-weight", "400");
+					Ember.$(this).css("font-weight", "400");
 				}
 				else {
-					$(this).css("font-weight", "700");
+					Ember.$(this).css("font-weight", "700");
 				}
 			});
 		},
 		italic: function(object) {
-			$("#"+object).each(function(i) {
-				var italic = $(this).css("font-style");
+			Ember.$("#"+object).each(function() {
+				var italic = Ember.$(this).css("font-style");
 				if (italic === "italic") {
-					$(this).css("font-style", "normal");
+					Ember.$(this).css("font-style", "normal");
 				}
 				else {
-					$(this).css("font-style", "italic");
+					Ember.$(this).css("font-style", "italic");
 				}
 			});
 		},
 		caps: function(object) {
-			$("#"+object).each(function(i) {
-				var caps = $(this).css("text-transform");
+			Ember.$("#"+object).each(function() {
+				var caps = Ember.$(this).css("text-transform");
 				if (caps === "uppercase") {
-					$(this).css("text-transform", "none");
+					Ember.$(this).css("text-transform", "none");
 				}
 				else {
-					$(this).css("text-transform", "uppercase");
+					Ember.$(this).css("text-transform", "uppercase");
 				}
 			});
 		},
 		likeFam: function(object, likeButton) {
-			var fam = $("#"+object).css("font-family");
+			var fam = Ember.$("#"+object).css("font-family");
 			if (fam.charAt(0) === '"' && fam.charAt(fam.length -1) === '"') {
 				    fam = fam.substr(1,fam.length-2);
 			}
 			// console.log(fam);
 
-			$.ajax({
+			Ember.$.ajax({
 				type: 'post',
 				url: 'https://lorem-ipsum-api.herokuapp.com/fonts/liked',
 				data: {
@@ -111,9 +113,9 @@ export default Ember.Controller.extend({
 				}
 			});
 
-			$("#"+likeButton).css("visibility", "hidden");
-			$("#"+likeButton+"done").css("visibility", "visible");
-			return $("#"+object).css("font-family");
+			Ember.$("#"+likeButton).css("visibility", "hidden");
+			Ember.$("#"+likeButton+"done").css("visibility", "visible");
+			return Ember.$("#"+object).css("font-family");
 		}
 	}
 });

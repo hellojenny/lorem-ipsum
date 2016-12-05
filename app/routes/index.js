@@ -9,7 +9,7 @@ export default Ember.Route.extend({
 		});
 	},
 	afterModel: function(params) {
-		console.log("help (index)");
+		// console.log("help (index)");
 		// this.controllerFor('index').send('firstFont');
 	}
 });
